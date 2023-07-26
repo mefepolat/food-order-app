@@ -2,7 +2,7 @@
 
 const Title = ({children, className}) => {
   return (
-    <div className={`${className}`}>{children}</div>
+    <div className={`${className} font-dancing font-bold`}>{children}</div>
   );
 };
 
