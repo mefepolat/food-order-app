@@ -10,3 +10,11 @@
   margin: 0;
 }
 
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.btn-primary {
+  @apply text-white px-[1.875rem] py-[0.5rem] rounded-3xl bg-primary cursor-pointer hover:opacity-70 transition-all;
+}
