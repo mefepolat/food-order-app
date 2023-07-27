@@ -1,7 +1,10 @@
+import Carousel from "@/components/Carousel";
 
 export const Index = () => {
   return (
-    <div></div>
+    <div className='relative'>
+      <Carousel />
+    </div>
   );
 };
 
