@@ -17,7 +17,7 @@ const Search = ({ setIsSearchModal }) => {
             <input
               type="text"
               placeholder="Search..."
-              className="border w-full my-10"
+              className="border w-full my-10 h-10 text-center"
             />
 
             <ul className="">
