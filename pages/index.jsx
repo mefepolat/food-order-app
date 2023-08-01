@@ -16,9 +16,7 @@ export default function Index() {
     </Head>
     <Header />
     <Home />
-    <div className='p-20 container mx-auto'>
-      <Input type='email' placeholder='Email' />
-    </div>
+   
    </div>
   )
 }
