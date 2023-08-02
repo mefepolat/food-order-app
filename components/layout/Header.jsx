@@ -64,7 +64,7 @@ const Header = () => {
               className="text-xl hover:text-primary transition-all"
             />
           </button>
-          <a href="#" className="md:inline-block hidden sm">
+          <a href="" className="md:inline-block hidden sm">
             <button className="btn-primary">Order Online</button>
           </a>
           <button
