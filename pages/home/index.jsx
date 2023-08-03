@@ -3,16 +3,17 @@ import Carousel from "@/components/Carousel";
 import Promotions from "@/components/Promotions";
 import Reservation from "@/components/Reservation";
 import MenuWrapper from "@/components/product/MenuWrapper";
+import React from "react";
 
 export const Index = () => {
   return (
-    <div className=''>
+    <React.Fragment>
       <Carousel />
       <Promotions />
       <MenuWrapper />
       <About />
       <Reservation />
-    </div>
+    </React.Fragment>
   );
 };
 

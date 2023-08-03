@@ -1,32 +1,35 @@
+import  {reservationSchema}  from "../schema/reservation";
 import Input from "./form/Input";
 import Title from "./ui/Title";
 import { useFormik } from "formik";
 
 const Reservation = () => {
-
   const onSubmit = async (values, actions) => {
     await new Promise((resolve) => setTimeout(resolve, 4000));
     actions.resetForm();
-  }
+  };
 
   const formik = useFormik({
     initialValues: {
-      fullname: "",
+      fullName: "",
       phoneNumber: "",
       email: "",
-      people: "",
+      persons: "",
       date: "",
     },
-    onSubmit: onSubmit,
+    onSubmit,
+    validationSchema: reservationSchema,
   });
-
+  console.log(formik)
   const inputs = [
     {
       id: 1,
       name: "fullName",
       type: "text",
       placeholder: "Your Full Name",
-      value: formik.values.fullname,
+      value: formik.values.fullName,
+      errorMessage: formik.errors.fullName,
+      touched: formik.touched.fullName,
     },
     {
       id: 2,
@@ -34,6 +37,8 @@ const Reservation = () => {
       type: "number",
       placeholder: "Your Phone Number",
       value: formik.values.phoneNumber,
+      errorMessage: formik.errors.phoneNumber,
+      touched: formik.touched.phoneNumber,
     },
     {
       id: 3,
@@ -41,6 +46,8 @@ const Reservation = () => {
       type: "email",
       placeholder: "Your Email",
       value: formik.values.email,
+      errorMessage: formik.errors.email,
+      touched: formik.touched.email,
     },
     {
       id: 4,
@@ -48,6 +55,8 @@ const Reservation = () => {
       type: "number",
       placeholder: "Number of People",
       value: formik.values.people,
+      errorMessage: formik.errors.people,
+      touched: formik.touched.people,
     },
     {
       id: 5,
@@ -55,9 +64,11 @@ const Reservation = () => {
       type: "datetime-local",
       placeholder: "Date",
       value: formik.values.date,
+      errorMessage: formik.errors.date,
+      touched: formik.touched.date,
     },
   ];
-
+  console.log(formik.errors.toString());
   return (
     <div className="container mx-auto py-12">
       <Title className="text-[2.5rem] mb-10">Book A Table</Title>
@@ -72,6 +83,7 @@ const Reservation = () => {
                   type={input.type}
                   placeholder={input.placeholder}
                   onChance={formik.handleChange}
+                  onBlur={formik.handleBlur}
                 />
               );
             })}

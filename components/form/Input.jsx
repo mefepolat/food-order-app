@@ -1,13 +1,17 @@
-const Input = ({ type, placeholder, name }) => {
+const Input = ({ type, placeholder, name, errorMessage, onBlur, touched }) => {
+  console.log(errorMessage);
   return (
     <div className="w-full">
       <label className="relative block cursor-text w-full">
         <input
           type={type}
           name={name}
-          className={`h-14 w-full border border-primary outline-none px-4 peer ${
-            name !== "date" && "pt-2"
-          }}`}
+          className={`h-14 w-full border outline-none px-4 peer ${
+            type !== "datetime-local" && "pt-2"
+          }
+          ${touched && errorMessage ? "border-red-500" : "border-primary"}
+          
+          `}
           required
         />
         {name !== "date" && (
@@ -15,6 +19,7 @@ const Input = ({ type, placeholder, name }) => {
             {placeholder}
           </span>
         )}
+        {touched && <span>{errorMessage}</span>}
       </label>
     </div>
   );
