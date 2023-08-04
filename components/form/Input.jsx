@@ -1,5 +1,5 @@
 const Input = ({ type, placeholder, name, errorMessage, onBlur, touched }) => {
-  console.log(errorMessage);
+  
   return (
     <div className="w-full">
       <label className="relative block cursor-text w-full">
