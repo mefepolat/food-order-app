@@ -1,12 +1,12 @@
-import  {reservationSchema}  from "../schema/reservation";
 import Input from "./form/Input";
 import Title from "./ui/Title";
 import { useFormik } from "formik";
+import  {reservationSchema}  from "../schema/reservation.js";
 
 const Reservation = () => {
   const onSubmit = async (values, actions) => {
     await new Promise((resolve) => setTimeout(resolve, 4000));
-    actions.resetForm();
+    formik.resetForm();
   };
 
   const formik = useFormik({
@@ -14,7 +14,7 @@ const Reservation = () => {
       fullName: "",
       phoneNumber: "",
       email: "",
-      persons: "",
+      people: "",
       date: "",
     },
     onSubmit,
@@ -68,7 +68,7 @@ const Reservation = () => {
       touched: formik.touched.date,
     },
   ];
-  console.log(formik.errors.toString());
+  
   return (
     <div className="container mx-auto py-12">
       <Title className="text-[2.5rem] mb-10">Book A Table</Title>
