@@ -20,7 +20,7 @@ const Reservation = () => {
     onSubmit,
     validationSchema: reservationSchema,
   });
-  console.log(formik)
+  
   const inputs = [
     {
       id: 1,
