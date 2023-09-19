@@ -15,6 +15,7 @@ export const Index = () => {
       <About />
       <Reservation />
       <Customers />
+      
     </React.Fragment>
   );
 };
